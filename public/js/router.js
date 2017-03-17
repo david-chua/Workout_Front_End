@@ -12,16 +12,16 @@ angular.module('workout-app',['ui.router', 'ui-calendar', 'ui-router', 'ui-boots
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-    .state('userpage', {
+    .state('main', {
       url: '/',
       tempalteUrl:'/partials/main.html',
     })
     .state('signup', {
-      url: '/users',
+      url: '/signup',
       templateUrl: '/partials/signup.html'
     })
     .state('login',{
-      url: '/',
+      url: '/login',
       templateUrl: '/partials/login.html'
     })
     .state('home',{
