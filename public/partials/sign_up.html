@@ -1,0 +1,24 @@
+<h2> Sign up </h2>
+<div ng-controller="AuthController as auth" class="signup">
+  <form ng-submit="auth.signup(user)" class="form_box">
+    <div class="input">
+      <label><b> Name </b></label>
+      <input type="text" ng-model="user.name" placeholder="Enter Name" required>
+    </div>
+    <div class="input">
+      <label><b> UserName </b></label>
+      <input type="text" ng-model="user.username" placeholder="Enter Username" required>
+    </div>
+    <div class="input">
+      <label><b> Email </b></label>
+      <input type="text" ng-model="user.email" placeholder="Enter Email" required>
+    </div>
+    <div class="input">
+      <label><b> Password </b></label>
+      <input type="text" ng-model="user.password" placeholder="Enter Password" required>
+    </div>
+    <div>
+      <button type="submit"> Sign Up </button>
+    </div>
+  </form>
+</div>

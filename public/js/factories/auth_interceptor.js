@@ -1,6 +1,6 @@
 function AuthInterceptor(AuthTokenFactory){
   return {
-    request: addtoken
+    request: addToken
   }
 
   function addToken(config){

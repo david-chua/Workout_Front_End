@@ -1,4 +1,5 @@
-angular.module('workout-app',['ui.router', 'ui-calendar', 'ui-router', 'ui-bootstrap', 'ui.boostrap.datatimepicker'])
+angular.module('workout-app',['ui.router'])
+// , 'ui-calendar', 'ui-bootstrap', 'ui.boostrap.datatimepicker'
   .config(workoutRouter)
   .config(authInterceptor);
 
