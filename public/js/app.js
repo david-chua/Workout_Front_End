@@ -1,2 +1,9 @@
 angular.module('workout-app')
-  
+  .controller('AuthController', AuthController)
+  .controller('HomeController', HomeController)
+  .controller('WorkoutController', WorkoutController)
+  .controller('WeightController', WeightController)
+  .controller('CardioController', CardioController)
+  .controler('CalendarController', CalendarController)
+  .factory('AuthTokenFactory', AuthTokenFactory)
+  .factory('AuthInterceptor', AuthInterceptor)
