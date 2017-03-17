@@ -19,11 +19,11 @@ angular.module('workout-app',['ui.router'])
     })
     .state('signup', {
       url: '/signup',
-      templateUrl: '/partials/signup.html'
+      templateUrl: '/partials/sign_up.html'
     })
     .state('login',{
       url: '/login',
-      templateUrl: '/partials/login.html'
+      templateUrl: '/partials/log_in.html'
     })
     .state('home',{
       url: '/home',
