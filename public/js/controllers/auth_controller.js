@@ -10,6 +10,7 @@ function AuthController($http, $state, $scope, $rootScope, AuthTokenFactory) {
       AuthTokenFactory.setToken(response.data.token)
 
       $scope.$emit('userLoggedIn', response.data.user);
+      $rootScope.$emit('fetchData', response.data.user);
       $state.go('home');
     });
   }
@@ -20,6 +21,7 @@ function AuthController($http, $state, $scope, $rootScope, AuthTokenFactory) {
       AuthTokenFactory.setToken(response.data.token)
 
       $scope.$emit('userLoggedIn', response.data.user);
+      $rootScope.$emit('fetchData', response.data.user);
       $state.go('home');
     });
   }
