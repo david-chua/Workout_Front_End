@@ -1,16 +1,16 @@
-function AuthInterceptor(AuthTokenFactory){
+function AuthInterceptor(AuthTokenFactory) {
   return {
     request: addToken
   }
 
-  function addToken(config){
+ function addToken(config) {
     var token = AuthTokenFactory.getToken()
 
-    if (token){
+   if (token) {
       config.headers = config.headers || {}
-      config.headers.Authorization `Bearer ${token}`
-    }
+      config.headers.Authorization = `Bearer ${token}`
+   }
 
-    return config
+   return config
   }
 }

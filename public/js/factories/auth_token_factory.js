@@ -1,6 +1,5 @@
-function AuthTokenFactory($window){
-  console.log('hi from auth')
-  var store = $window.locaStorage;
+function AuthTokenFactory($window) {
+  var store = $window.localStorage;
   var key = 'auth-token';
 
   return {
@@ -8,12 +7,12 @@ function AuthTokenFactory($window){
     setToken: setToken
   }
 
-  function getToken(){
+  function getToken() {
     return store.getItem(key)
   }
 
-  function setToken(token){
-    if(token){
+  function setToken(token) {
+    if (token) {
       store.setItem(key, token)
     } else {
       store.removeItem(key)
