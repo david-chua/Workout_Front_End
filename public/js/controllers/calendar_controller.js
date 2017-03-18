@@ -1,4 +1,5 @@
-function CalendarController($http, $uibModal, $uiCalendarConfig){
+function CalendarController($http, uiCalendarConfig){
+  // , $uibModal, $uiCalendarConfig
   var server = 'http://localhost:3000'
 
   this.animationsEnabled = true;

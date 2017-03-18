@@ -4,13 +4,14 @@
     <meta charset="utf-8">
     <title> Gains, Gains, Gainz!!</title>
     <head>
-      
+
     <!-- Angular Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 
     <!-- router -->
     <script src="js/router.js"></script>
+
     <!-- factories -->
     <script src="js/factories/auth_interceptor.js"></script>
     <script src="js/factories/auth_token_factory.js"></script>
@@ -32,8 +33,20 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="/css/style.css">
     </head>
-  <body>
-  Don't try this
-    {{4 +4}}
+    <body ng-controller="HomeController as home" >
+      <div ng-controller="AuthController as auth">
+        <ul>
+          <li ng-if="!home.currentUser" ui-sref="signup">signup</li>
+          <li ng-if="!home.currentUser" ui-sref="login">login</li>
+          <li ng-if="home.currentUser" ng-click="auth.logout()">logout</li>
+        </ul>
+      </div>
+
+          <ui-view>
+          </ui-view>
+
+        </div>
+      </div>
+    </div>
   </body>
 </html>

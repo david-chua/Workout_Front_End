@@ -1,4 +1,5 @@
 function AuthTokenFactory($window){
+  console.log('hi from auth')
   var store = $window.locaStorage;
   var key = 'auth-token';
 
