@@ -1,13 +1,18 @@
 <div ng-controller="WorkoutController as workout" class="">
+  <div ng-controller="WorkoutController as workout">
+    <form ng-submit="workout.createWorkout(workout)">
+      <label> Title </label>
+      <input name="title" type="text" ng-model="workout.title">
+      <label> Date </label>
+      <input name="date" type="text" ng-model="workout.date">
+      <label> Notes </label>
+      <input name="notes" type="text" ng-model="workout.notes">
 
-  <form ng-submit="workout.createWorkout(workout)">
-    <label> Title </label>
-    <input name="title" type="text" ng-model="workout.title">
-    <label> Date </label>
-    <input name="date" type="text" ng-model="workout.date">
-    <label> Notes </label>
-    <input name="notes" type="text" ng-model="workout.notes">
+      <button type="submit"> Add Workout </button>
+    </form>
+  </div>
 
-    <button type="submit"> Add Workout </button>
-  </form>
+  <div ng-repeat="workout in workout.allWorkout" class="">
+      <div> {{workout.title}} </div>
+  </div>
 </div>
