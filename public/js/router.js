@@ -29,4 +29,8 @@ angular.module('workout-app',['ui.router'])
       url: '/home',
       templateUrl: '/partials/home.html'
     })
+    .state('show_workout',{
+      url: '/show-workout',
+      templateUrl: '/partials/show_workout.html'
+    })
   }

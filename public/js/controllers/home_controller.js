@@ -1,9 +1,10 @@
-function HomeController($scope, $http){
+function HomeController($scope, $http, $state){
   console.log('HomeController')
   var self = this;
 
   $scope.$on('userLoggedIn', function(event,data){
     self.currentUser = data;
+    console.log(data)
     $scope.$broadcast('newLogin', self.currentUser)
   });
 

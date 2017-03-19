@@ -22,6 +22,7 @@ function AuthController($http, $state, $scope, $rootScope, AuthTokenFactory) {
 
       $scope.$emit('userLoggedIn', response.data.user);
       $rootScope.$emit('fetchData', response.data.user);
+      console.log(response.data.user)
       $state.go('home');
     });
   }
