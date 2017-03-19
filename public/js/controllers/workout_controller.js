@@ -27,25 +27,25 @@ function WorkoutController($http, $state, $scope){
   self.getWorkout = getWorkout;
   getWorkout();
 
+  // show route for 1 workout_id
+  function showWorkout(workout){
+      self.Showing = workout;
+      $scope.$emit('Showing', self.Showing);
+      console.log(self.Showing)
+      $state.go('show_workout');
+    }
+    self.showWorkout = showWorkout;
 
-  // function getWorkouts(){
-  //     $http.get(`${server}/workouts`)
-  //       .then(function(res) {
-  //         console.log(res.data)
-  //         self.allWorkouts = res.data.workouts;
-  //         console.log(self.allWorkouts)
-  //       })
-  //   }
-  //   self.getWorkouts = getWorkouts;
-  //   getWorkouts();
   //
-  //   function showWorkout(workout){
-  //     self.showing_workout = workout;
-  //     $scope.$emit('showing_workout', self.showing_workout);
-  //     $state.go('home');
-  //   }
+  // function deleteWorkout(workout){
+  //   $http.get(`${server}/workouts/${workout.id}`)
+  //   .then(function(response){
+  //     console.log(response);
+  //   })
+  //   $state.reload('home');
+  // }
   //
-  //   self.showWorkout = showWorkout
+  // self.deleteWorkout = deleteWorkout;
 
 
-  }
+}

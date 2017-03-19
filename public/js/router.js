@@ -29,8 +29,12 @@ angular.module('workout-app',['ui.router'])
       url: '/home',
       templateUrl: '/partials/home.html'
     })
+    .state('create_workout',{
+      url: '/workouts/create',
+      templateUrl: '/partials/create_workout.html'
+    })
     .state('show_workout',{
-      url: '/show-workout',
+      url: '/workouts/show',
       templateUrl: '/partials/show_workout.html'
     })
   }
