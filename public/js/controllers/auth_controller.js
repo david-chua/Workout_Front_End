@@ -1,17 +1,15 @@
 function AuthController($http, $state, $scope, $rootScope, AuthTokenFactory) {
 
   var self = this;
-  var server = 'http://localhost:3000';
+  // var server = "http://localhost:3000"
+  var server = 'https://workout-api-backend.herokuapp.com'
 
 
   function signup(userPass){
     $http.post(`${server}/users`, {user: userPass})
     .then(function(response){
-      AuthTokenFactory.setToken(response.data.token)
-
-      $scope.$emit('userLoggedIn', response.data.user);
-      $rootScope.$emit('fetchData', response.data.user);
-      $state.go('home');
+  
+      $state.go('login');
     });
   }
 

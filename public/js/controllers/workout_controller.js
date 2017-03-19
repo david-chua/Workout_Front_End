@@ -1,7 +1,8 @@
 function WorkoutController($http, $state, $scope){
 
   console.log('WorkoutController')
-  var server = "http://localhost:3000"
+  // var server = "http://localhost:3000"
+  var server ="https://workout-api-backend.herokuapp.com"
   var self = this;
 
 //create a new workout for the user
