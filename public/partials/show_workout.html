@@ -1,5 +1,12 @@
-<div ng-controller="WorkoutController as work">
-  <ul>
-    <li> Title: {{Showing.title}} </li>
-  </ul>
+<div ng-controller="WorkoutController as work" class="">
+  <div>
+
+    <ul>
+      <h2> Title: {{home.Showing.date}} </h2>
+      <li> Start Date: {{home.Showing.title}}</li>
+      <li> Notes: {{home.Showing.notes}} </li>
+      <button ng-if="home.currentUser.id == home.Showing.user_id" ng-click="work.deleteWorkout(home.Showing)" type="button" name="button"> Delete Workout </button>
+
+    </ul>
+  </div>
 </div>

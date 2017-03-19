@@ -31,21 +31,17 @@ function WorkoutController($http, $state, $scope){
   function showWorkout(workout){
       self.Showing = workout;
       $scope.$emit('Showing', self.Showing);
-      console.log(self.Showing)
+      console.log(self.Showing);
       $state.go('show_workout');
     }
     self.showWorkout = showWorkout;
 
-  //
-  // function deleteWorkout(workout){
-  //   $http.get(`${server}/workouts/${workout.id}`)
-  //   .then(function(response){
-  //     console.log(response);
-  //   })
-  //   $state.reload('home');
-  // }
-  //
-  // self.deleteWorkout = deleteWorkout;
-
-
+  function deleteWorkout(workout){
+    $http.delete(`${server}/workouts/${workout.id}`)
+    .then(function(res){
+      console.log(res)
+      $state.go('home')
+    })
+  }
+  self.deleteWorkout = deleteWorkout;
 }
