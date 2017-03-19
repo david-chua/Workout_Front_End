@@ -37,4 +37,8 @@ angular.module('workout-app',['ui.router'])
       url: '/workouts/show',
       templateUrl: '/partials/show_workout.html'
     })
+    .state('create_weight',{
+      url: '/workouts/show/weight/create',
+      templateUrl: '/partials/create_weight.html'
+    })
   }
