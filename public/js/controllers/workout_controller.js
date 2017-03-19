@@ -10,7 +10,7 @@ function WorkoutController($http, $state, $scope){
       .then(function(res){
         console.log(res);
 
-        $state.reload('home')
+        $state.go('home')
       });
 }
   self.createWorkout = createWorkout;
@@ -44,4 +44,15 @@ function WorkoutController($http, $state, $scope){
     })
   }
   self.deleteWorkout = deleteWorkout;
+
+  function editWorkout(workout){
+    console.log('edit route hit')
+    // used angular to Json
+    $http.put(`${server}/workouts/${workout.id}`, angular.toJson(workout))
+    .then(function(res){
+      console.log(res)
+      self.editForm = false;
+    })
+  }
+  self.editWorkout = editWorkout
 }

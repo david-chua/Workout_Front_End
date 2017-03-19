@@ -1,12 +1,24 @@
 <div ng-controller="WorkoutController as work" class="">
-  <div>
+  <div ng-if=!work.editForm>
 
     <ul>
-      <h2> Title: {{home.Showing.date}} </h2>
-      <li> Start Date: {{home.Showing.title}}</li>
+      <h2> Date: {{home.Showing.date}} </h2>
+      <li> Title: {{home.Showing.title}}</li>
       <li> Notes: {{home.Showing.notes}} </li>
       <button ng-if="home.currentUser.id == home.Showing.user_id" ng-click="work.deleteWorkout(home.Showing)" type="button" name="button"> Delete Workout </button>
-
+      <button ng-if="home.currentUser.id == home.Showing.user_id" ng-click="work.editForm = !work.editForm" type="button" name="button"> Edit Workout </button>
     </ul>
   </div>
+
+  <div ng-if="work.editForm">
+    <form ng-submit="work.editWorkout(home.Showing)">
+      <label> Title </label>
+      <input name="title" type="text" ng-model="home.Showing.title" placeholder="{{home.Showing.title}}">
+      <label> Date </label>
+      <input name="date" type="text" ng-model="home.Showing.date" placeholder="{{home.Showing.date}}">
+      <label> Notes </label>
+      <input name="notes" type="text" ng-model="home.Showing.notes" placeholder="{{home.Showing.notes}}">
+
+      <button ng-click="work.editWorkout(home.Showing)" type="submit"> Edit This Workout </button>
+    </form>
 </div>
