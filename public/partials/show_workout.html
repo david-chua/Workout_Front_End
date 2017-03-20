@@ -10,7 +10,7 @@
     </ul>
   </div>
 
-  <button class="button" ng-if="home.currentUser" ui-sref="create_weight"> Add an Exercise </button>
+  <button class="button" ng-if="home.currentUser" ui-sref="create_weight({workoutId: workoutId})"> Add an Exercise </button>
 
   <div ng-if="work.editForm">
     <form ng-submit="work.editWorkout(home.Showing)">
@@ -21,6 +21,6 @@
       <label> Notes </label>
       <input name="notes" type="text" ng-model="home.Showing.notes" placeholder="{{home.Showing.notes}}">
 
-      <button ng-click="work.editWorkout(home.Showing)" type="submit"> Edit This Workout </button>
+      <button type="submit"> Edit This Workout </button>
     </form>
 </div>

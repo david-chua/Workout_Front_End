@@ -34,11 +34,11 @@ angular.module('workout-app',['ui.router'])
       templateUrl: '/partials/create_workout.html'
     })
     .state('show_workout',{
-      url: '/workouts/show',
-      templateUrl: '/partials/show_workout.html'
+      url: '/workouts/show/{workoutId}',
+      templateUrl: '/partials/show_workout.html',
     })
     .state('create_weight',{
-      url: '/workouts/show/weight/create',
+      url: '/workouts/show/{workoutId}/weights',
       templateUrl: '/partials/create_weight.html'
     })
   }

@@ -1,4 +1,4 @@
-function WorkoutController($http, $state, $scope){
+function WorkoutController($http, $state, $scope, $stateParams){
 
   console.log('WorkoutController')
   var server = "http://localhost:3000"
@@ -33,7 +33,7 @@ function WorkoutController($http, $state, $scope){
       self.Showing = workout;
       $scope.$emit('Showing', self.Showing);
       console.log(self.Showing);
-      $state.go('show_workout');
+      $state.go('show_workout', {workoutId: self.Showing.id});
     }
     self.showWorkout = showWorkout;
 
@@ -48,6 +48,7 @@ function WorkoutController($http, $state, $scope){
 
   function editWorkout(workout){
     console.log('edit route hit')
+    console.log($stateParams.workoutId)
     // used angular to Json
     $http.put(`${server}/workouts/${workout.id}`, angular.toJson(workout))
     .then(function(res){
@@ -59,8 +60,9 @@ function WorkoutController($http, $state, $scope){
 
 
 
+
 // Weights portion of code
-// 
+//
 //   function newExercise(lift){
 //     console.log(lift)
 //     $http.post(`${server}/workouts/${lift.id}`, {lift: lift})
