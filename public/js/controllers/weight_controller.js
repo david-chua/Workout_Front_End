@@ -17,11 +17,14 @@ function WeightController($http, $scope, $state, $stateParams){
   function createWeight(workoutId, weight){
     console.log('hitting create weight');
     console.log($stateParams.workoutId)
+    var workoutId = $stateParams.workoutId
+    console.log(workoutId)
     console.log(weight)
-    $http.post(`${server}/workouts/${workoutId}/weights`, {workoutId: $stateParams.workoutId, weight: weight})
+
+    $http.post(`${server}/workouts/${workoutId}/weights`, {weight: weight})
       .then(function(response){
         console.log(response);
-        $state.go('show_workout', {test: 1})
+        $state.go('show_workout')
       });
   }
   self.createWeight = createWeight
