@@ -15,5 +15,5 @@ function HomeController($scope, $http, $state){
   $scope.$on('Showing', function(event,data){
     self.Showing = data;
   });
-  
+
 }

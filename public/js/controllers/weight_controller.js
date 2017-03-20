@@ -1,20 +1,27 @@
 function WeightController($http, $scope, $state, $stateParams){
   console.log('WeightController')
   var self = this;
-  // var server = 'http://localhost:3000';
-  var server = 'https://workout-api-backend.herokuapp.com'
+  var server = 'http://localhost:3000';
+  // var server = 'https://workout-api-backend.herokuapp.com'
+
+// get all weight exercises of the workout
+function getWeights(workoutId, weights){
+  console.log('getting my lifting info')
+  var workoutId = $stateParams.workoutId
+  console.log(workoutId)
+  $http.get(`${server}/workouts/${workoutId}/weights`)
+  .then(function(response){
+    console.log(response)
+    console.log(response.data)
+    self.allWeights = response.data;
+    console.log(self.allWeights);
+  })
+}
+self.getWeights = getWeights;
+getWeights()
 
 
-  // function getWorkoutandWeights(){
-  //   $http.get(`${server}/workouts/${id}`)
-  //   .then(function(response){
-  //     self.oneWorkout = response.data.workout;
-  //     self.workoutWeights = response.data.weights;
-  //   });
-  // }
-  // self.getWorkoutandWeights = getWorkoutandWeights
-
-
+// create a workout
   function createWeight(workoutId, weight){
     console.log('hitting create weight');
     console.log($stateParams.workoutId)
@@ -25,7 +32,8 @@ function WeightController($http, $scope, $state, $stateParams){
     $http.post(`${server}/workouts/${workoutId}/weights`, {weight: weight})
       .then(function(response){
         console.log(response);
-        $state.go('show_workout')
+        console.log(response.data);
+        $state.go('show_workout', {workoutId: workoutId})
       });
   }
   self.createWeight = createWeight

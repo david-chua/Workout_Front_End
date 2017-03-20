@@ -1,6 +1,5 @@
 <div ng-controller="WorkoutController as work" class="">
   <div ng-if=!work.editForm>
-   {{home.Showing.id}}
     <ul>
       <h2> Date: {{home.Showing.date}} </h2>
       <li> Title: {{home.Showing.title}}</li>
@@ -9,6 +8,17 @@
       <button ng-if="home.currentUser.id == home.Showing.user_id" ng-click="work.editForm = !work.editForm" type="button" name="button"> Edit Workout </button>
     </ul>
   </div>
+
+  <div ng-controller="WeightController as lift" class="">
+    <h1> Exercises </h1>
+    <div ng-repeat="weight in lift.allWeights">
+      <ul>
+        <li> {{weight.exercise_name}}</li>
+        <li> {{weight.rep}}</li>
+        <li> {{weight.set}}</li>
+        <li> {{weight.weight}}</li>
+      </ul>
+    </div>
 
   <button class="button" ng-if="home.currentUser" ui-sref="create_weight({workoutId: home.Showing.id})"> Add an Exercise </button>
 
