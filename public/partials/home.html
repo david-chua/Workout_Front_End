@@ -6,6 +6,6 @@
       <li ng-click="work.showWorkout(workout)">{{workout.title}} </li>
     </ul>
   </div>
-  <button class="button" ng-if="home.currentUser" ui-sref="create_workout"> Add a Workout </button>
+  <button class="button" ng-if="home.currentUser" ui-sref="create_workout({worout_id: id})"> Add a Workout </button>
 
 </div>

@@ -15,7 +15,7 @@ angular.module('workout-app',['ui.router'])
     $stateProvider
     .state('main', {
       url: '/',
-      tempalteUrl:'/partials/main.html'
+      templateUrl:'/partials/main.html'
     })
     .state('signup', {
       url: '/signup',

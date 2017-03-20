@@ -56,4 +56,19 @@ function WorkoutController($http, $state, $scope){
     })
   }
   self.editWorkout = editWorkout
-}
+
+
+
+// Weights portion of code
+// 
+//   function newExercise(lift){
+//     console.log(lift)
+//     $http.post(`${server}/workouts/${lift.id}`, {lift: lift})
+//     .then(function(res){
+//       console.log(res);
+//
+//       $state.go('show_workout')
+//     });
+// }
+//   self.newExercise = newExercise
+  }

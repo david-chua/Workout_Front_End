@@ -1,6 +1,5 @@
-<div ng-controller="WorkoutController as work">
-<div ng-controller="WeightController as lift" class="">
-  <form ng-submit="lift.newExercise(mass)">
+<div ng-controller="WeightController as lift">
+  <form ng-submit="lift.createWeight(workout.id, weight)">
     <label> Exercise Name </label>
     <input name="exercise_name" type="text" ng-model="lift.exercise_name">
     <label> Sets </label>
@@ -12,5 +11,4 @@
 
     <button type="submit"> Add Workout </button>
   </form>
-</div>
 </div>

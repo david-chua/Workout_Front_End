@@ -1,0 +1,57 @@
+/*Nav Bar*/
+.nav li{
+  float:left;
+  margin-top: 22px;
+  margin-left: 30px;
+  margin-right: 15px;
+
+}
+
+.title{
+  float: left;
+  font-family: 'Bree Serif', serif;
+  margin-left: 15px;
+}
+
+.nav_list{
+  float:right;
+}
+
+/*Main Home Page*/
+
+.Lifting{
+  display: block;
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: center;
+
+}
+.Lifting img{
+  margin-top: 10%;
+
+
+}
+.top {
+  font-size: 200%;
+}
+
+.bottom{
+  font-size: 150%;
+}
+
+/*Login*/
+h2{
+  text-align: center;
+}
+.login{
+  text-align:center;
+}
+.btn{
+  margin-top: 5px;
+}
+
+/*/Signup*/
+
+.signup{
+  text-align: center;
+}
