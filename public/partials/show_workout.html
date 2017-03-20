@@ -5,7 +5,6 @@
       <h2> Date: {{home.Showing.date}} </h2>
       <li> Title: {{home.Showing.title}}</li>
       <li> Notes: {{home.Showing.notes}} </li>
-      <li> Start: {{home.Showing.start}}</li>
       <button ng-if="home.currentUser.id == home.Showing.user_id" ng-click="work.deleteWorkout(home.Showing)" type="button" name="button"> Delete Workout </button>
       <button ng-if="home.currentUser.id == home.Showing.user_id" ng-click="work.editForm = !work.editForm" type="button" name="button"> Edit Workout </button>
     </ul>

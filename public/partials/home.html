@@ -1,11 +1,10 @@
-<div ng-controller="WorkoutController as work" class="">
+<div ng-controller="WorkoutController as work" class="WorkoutList">
 
-  <div ng-repeat="workout in work.allWorkout" class="">
+  <div ng-repeat="workout in work.allWorkout | orderBy: '-created_at'" class="">
     <ul>
-      <li> {{workout.date}} </li>
-      <li ng-click="work.showWorkout(workout)">{{workout.title}} </li>
+      <h3> {{workout.date}} </h3>
+      <h4 ng-click="work.showWorkout(workout)">{{workout.title}} </h4s>
     </ul>
   </div>
-  <button class="button" ng-if="home.currentUser" ui-sref="create_workout({worout_id: id})"> Add a Workout </button>
-
 </div>
+  <button class="button" ng-if="home.currentUser" ui-sref="create_workout"> Add a Workout </button>
