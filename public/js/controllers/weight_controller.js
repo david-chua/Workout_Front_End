@@ -1,8 +1,8 @@
 function WeightController($http, $scope, $state, $stateParams){
   console.log('WeightController')
   var self = this;
-  var server = 'http://localhost:3000';
-  // var server = 'https://workout-api-backend.herokuapp.com'
+  // var server = 'http://localhost:3000';
+  var server = 'https://workout-api-backend.herokuapp.com'
 
 // get all weight exercises of the workout
 function getWeights(workoutId, weights){
