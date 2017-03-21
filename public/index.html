@@ -44,7 +44,7 @@
     <body ng-controller="HomeController as home" >
       <div ng-controller="AuthController as auth">
         <ul class="nav nav-tabs">
-          <div class="title"> <h1>Training for Gains</h1> </div>
+          <div class="title" ui-sref="home"> <h1>Training for Gains</h1> </div>
           <div class="nav_list">
           <li class="top" ng-if="!home.currentUser" ui-sref="signup">signup</li>
           <li class="top" ng-if="!home.currentUser" ui-sref="login">login</li>
