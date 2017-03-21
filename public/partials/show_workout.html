@@ -1,36 +1,33 @@
 <div ng-controller="WorkoutController as work" class="">
   <div ng-if=!work.editForm>
     <ul>
-      <h2> Date: {{home.Showing.date}} </h2>
-      <li> Title: {{home.Showing.title}}</li>
-      <li> Notes: {{home.Showing.notes}} </li>
-      <button ng-if="home.currentUser.id == home.Showing.user_id" ng-click="work.deleteWorkout(home.Showing)" type="button" name="button"> Delete Workout </button>
-      <button ng-if="home.currentUser.id == home.Showing.user_id" ng-click="work.editForm = !work.editForm" type="button" name="button"> Edit Workout </button>
+      <h2 class="Workout_Date"> Date: {{home.Showing.date}} </h2>
+      <h3> Title: {{home.Showing.title}}</h3>
+      <h5> Notes: {{home.Showing.notes}} </h5></br>
+      <button class="delete_btn btn-danger" ng-if="home.currentUser.id == home.Showing.user_id" ng-click="work.deleteWorkout(home.Showing)" type="button" name="button"> Delete Workout </button>
+      <button class="create_btn btn-success" ng-if="home.currentUser.id == home.Showing.user_id" ng-click="work.editForm = !work.editForm" type="button" name="button"> Edit Workout </button>
     </ul>
   </div>
 
   <div ng-controller="WeightController as lift" class="">
-    <h1> Exercises </h1>
-    <div ng-repeat="weight in lift.allWeights">
-      <ul>
-        <li> {{weight.exercise_name}}</li>
-        <li> {{weight.rep}}</li>
-        <li> {{weight.set}}</li>
-        <li> {{weight.weight}}</li>
-      </ul>
+    <h2 class="Exercise_List"> Exercises </h2>
+    <div class="exercise_container" ng-repeat="weight in lift.allWeights">
+      <ul class="exercise_info_ul">
+        <div> <p class="exercise_info">{{weight.exercise_name}} - Set: {{weight.set}} - Rep: {{weight.rep}} - {{weight.weight}} lbs</p></div>
     </div>
 
-  <button class="button" ng-if="home.currentUser" ui-sref="create_weight({workoutId: home.Showing.id})"> Add an Exercise </button>
+  <button class="weight_add_button btn-primary" ng-if="home.currentUser" ui-sref="create_weight({workoutId: home.Showing.id})"> Add an Exercise </button>
 
-  <div ng-if="work.editForm">
+  <div class="edit_workout_form" ng-if="work.editForm">
     <form ng-submit="work.editWorkout(home.Showing)">
-      <label> Title </label>
-      <input name="title" type="text" ng-model="home.Showing.title" placeholder="{{home.Showing.title}}">
-      <label> Date </label>
-      <input name="date" type="text" ng-model="home.Showing.date" placeholder="{{home.Showing.date}}">
-      <label> Notes </label>
-      <input name="notes" type="text" ng-model="home.Showing.notes" placeholder="{{home.Showing.notes}}">
+      <h1> Edit Workout </h1><br>
+      <label> Title </label><br>
+      <input name="title" type="text" ng-model="home.Showing.title" placeholder="{{home.Showing.title}}"><br>
+      <label> Date </label><br>
+      <input name="date" type="text" ng-model="home.Showing.date" placeholder="{{home.Showing.date}}"><br>
+      <label> Notes </label><br>
+      <input name="notes" type="text" ng-model="home.Showing.notes" placeholder="{{home.Showing.notes}}"><br>
 
-      <button type="submit"> Edit This Workout </button>
+      <button class="btn btn-primary" type="submit"> Edit This Workout </button>
     </form>
 </div>

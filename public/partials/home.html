@@ -1,10 +1,16 @@
 <div ng-controller="WorkoutController as work" class="WorkoutList">
 
-  <div ng-repeat="workout in work.allWorkout | orderBy: '-created_at'" class="">
+  <div class="container">
+  <div ng-repeat="workout in work.allWorkout | orderBy: '-created_at'">
     <ul>
       <h3> {{workout.date}} </h3>
       <h4 ng-click="work.showWorkout(workout)">{{workout.title}} </h4s>
     </ul>
   </div>
+    <button id="add_workout_btn" class="btn btn-primary" ng-if="home.currentUser" ui-sref="create_workout"> Add a Workout </button>
 </div>
-  <button class="button" ng-if="home.currentUser" ui-sref="create_workout"> Add a Workout </button>
+
+  <div class="first_quote">
+    <img class="quote-img" src="./css/Images/quotes.jpg">
+  </div>
+</div>

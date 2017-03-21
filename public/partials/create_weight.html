@@ -1,15 +1,16 @@
 
-<div ng-controller="WeightController as lift">
+<div ng-controller="WeightController as lift" class=create_form_box>
+  <h2> What did I do? </h2>
   <form ng-submit="lift.createWeight(workout.id, lift)">
-    <label> Exercise Name </label>
-    <input name="exercise_name" type="text" ng-model="lift.exercise_name">
-    <label> Sets </label>
-    <input name="set" type="integer" ng-model="lift.set">
-    <label> Reps </label>
-    <input name="rep" type="integer" ng-model="lift.rep">
-    <label> Weight (in lbs) </label>
-    <input name="weight" type="text" ng-model="lift.weight">
+    <label> Exercise Name </label><br>
+    <input name="exercise_name" type="text" ng-model="lift.exercise_name"><br>
+    <label> Sets </label><br>
+    <input name="set" type="integer" ng-model="lift.set"><br>
+    <label> Reps </label><br>
+    <input name="rep" type="integer" ng-model="lift.rep"><br>
+    <label> Weight (in lbs) </label><br>
+    <input name="weight" type="text" ng-model="lift.weight"><br>
 
-    <button type="submit"> Add Workout </button>
+    <button class="add_btn btn-primary" type="submit"> Add Exercise </button>
   </form>
 </div>

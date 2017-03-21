@@ -55,10 +55,70 @@ h2{
 .signup{
   text-align: center;
 }
-/*
-Show All Workout Page*/
-.WorkoutList{
-  height: 400px;
-  width: 500px;
-  overflow: scroll;
+
+/*Show Workout Page*/
+
+
+
+
+/*Show All Workout Page*/
+
+#add_workout_btn{
+  margin-left: 45px;
+  float:right;
 }
+
+.container{
+  margin-right: 30%;
+  float: right;
+  width: 200px;
+}
+.first_quote{
+  margin-left: 10%;
+}
+
+
+/*
+//Show One Workout*/
+
+.edit_workout_form{
+  margin-left: 10%;
+}
+.Exercise_List{
+  text-align: left;
+  margin-left: 35px;
+}
+
+.Workout_Date{
+  text-align: left;
+}
+h3{
+  text-align: left;
+}
+
+.exercise_info{
+  display: inline-block
+
+}
+
+.weight_add_button{
+  margin-left: 35px;
+}
+
+.create_workout_box{
+  text-align: center;
+}
+
+.Add_workout_btn{
+  margin-top: 10px;
+}
+
+.create_form_box{
+  text-align: center;
+}
+
+.add_btn {
+  margin-top: 10px;
+}
+
+/*Show one workout page and show all exercise page*/

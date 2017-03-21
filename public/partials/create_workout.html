@@ -1,11 +1,12 @@
-<div ng-controller="WorkoutController as workout" class="">
+<div ng-controller="WorkoutController as workout" class="create_workout_box">
+  <h2> Create a Workout </h2>
   <form ng-submit="workout.createWorkout(workout)">
-    <label> Title </label>
-    <input name="title" type="text" ng-model="workout.title">
-    <label> Date </label>
-    <input name="date" type="text" ng-model="workout.date">
-    <label> Notes </label>
-    <input name="notes" type="text" ng-model="workout.notes">
-    <button type="submit"> Add Workout </button>
+    <label> Title </label><br>
+    <input name="title" type="text" ng-model="workout.title"><br>
+    <label> Date </label><br>
+    <input name="date" type="text" ng-model="workout.date"><br>
+    <label> Notes </label><br>
+    <input name="notes" type="text" ng-model="workout.notes"><br>
+    <button class="Add_workout_btn btn-primary" type="submit"> Add Workout </button>
   </form>
 </div>
